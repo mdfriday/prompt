@@ -44,19 +44,3 @@
 #### **（5）工厂（Factory）**
 - **定义**：封装对象创建逻辑，避免直接使用 `new`，确保符合业务规则。
 
-### **生成代码的步骤**
-1. **确定业务需求**
-    - 识别核心业务对象（实体、值对象）。
-    - 确定业务用例（增删改查、业务规则）。
-2. **生成领域层（Domain）**
-    - 定义 `entity`、`valueobject`、`repository`、`factory`。
-3. **生成应用层（Application）**
-    - 实现 `service`，调用 `repository`。
-4. **生成接口层（Interfaces）**
-    - 提供 HTTP API / CLI 入口。
-
-### **6. 约束 & 规范**
-✅ **日志**：使用 `"pkg/loggers"`，禁止 `fmt.Println`。  
-✅ **错误处理**：使用 `errors.Wrap` 提供上下文。  
-✅ **并发安全**：使用 `sync.Mutex` 或 `sync/atomic`。  
-✅ **依赖管理**：使用 `wire` 进行依赖注入。
